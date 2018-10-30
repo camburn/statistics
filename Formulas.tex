@@ -1,0 +1,538 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+
+\title{STAT7055 Formulas}
+\author{Campbell}
+\date{October 2018}
+
+\begin{document}
+
+\maketitle
+\pagebreak
+\section{Numerical Descriptions}
+
+\subsubsection{Arithmetic Mean}
+The mean is the average of all the observations.
+\\
+Population mean
+\begin{equation}
+\mu = \frac{1}{N}\sum_{i = 1}^{N}X_i
+\end{equation}
+Sample mean
+\begin{equation}
+\bar{X} = \frac{1}{n}\sum_{i = 1}^{n}X_i
+\end{equation}
+
+\subsubsection{Median}
+The median is the middle observation in an ascending ordered list.
+Median is the middle observation if $n$ is odd.
+Or the average of the middle two observations if $n$ is even.
+\begin{equation}
+median\:of\:{1, 2, 3, 4, 5} = 3
+\end{equation}
+\begin{equation}
+median\:of\:{2, 4, 6, 8, 10, 12} = \frac{6+8}{2} = 7
+\end{equation}
+
+\subsubsection{Mode}
+Mode is the most frequently occurring observation. If its tied all tied values are the mode
+\begin{equation}
+mode\:of\:{1, 1, 2, 2, 2, 5, 5} = 2
+\end{equation}
+
+\subsubsection{Percentile}
+Percentiles divide the data into hundredths and report the observation at the boundaries of the subsets.
+
+If we have $n$ observations, the location of the $p$th percentile is given by:
+\begin{equation}
+L_p = (n + 1)\frac{p}{100}
+\end{equation}
+
+\subsubsection{Range}
+The range of a dataset is defined to be
+
+\begin{equation}
+Range = Largest\:Value = Smallest\:Value
+\end{equation}
+
+A special range is the interquartile range (IQR) which is the difference of the 3rd quartile (75\%) and the 1st quartile (25\%)
+\begin{equation}
+IQR = Q_3 - Q_1
+\end{equation}
+
+\subsubsection{Variance}
+The variance measures the spread or variability of a given distribution of data.They are measured relative to the mean $\mu$ of the data set.\\
+
+Population Variance
+\begin{equation}
+\sigma^2 = \frac{1}{N}\displaystyle\sum_{i=1}^{N}(X_i - \mu)^2
+\end{equation}
+Sample Variance
+\begin{equation}
+s^2 = \frac{1}{n-1}\displaystyle\sum_{i=1}^{n}(X_i - \bar{X})^2
+\end{equation}
+
+\subsubsection{Standard Deviation}
+Also measures the variance, but is converted back to original units as compared to the variance.
+\\
+
+Population deviation
+\begin{equation}
+\sigma = \sqrt{\frac{1}{N }\displaystyle\sum_{i=1}^{N}(X_i - \mu)^2}
+\end{equation}
+
+Sample deviation
+\begin{equation}
+s = \sqrt{\frac{1}{n - 1}\displaystyle\sum_{i=1}^{n}(X_i - \bar{X})^2}
+\end{equation}
+
+\subsubsection{Co-variance}
+Co-variance is the measure of the linear relationship between two variables. It describes how they move in relation to one another.
+\\
+
+Population deviation
+\begin{equation}
+\sigma_{CV} = \frac{1}{N}\displaystyle\sum_{i=1}^{N}(X_i - \mu_X)(Y_i - \mu_Y)
+\end{equation}
+
+Sample deviation
+\begin{equation}
+s_{XY} = \frac{1}{n-1}\displaystyle\sum_{i=1}^{n}(X_i - \bar{X})(Y_i - \bar{Y})
+\end{equation}
+
+\subsubsection{Correlation Coefficient}
+Correlation is also a measure of linear relationship between two variables.
+\\
+
+Population correlation coefficient
+\begin{equation}
+\rho_{XY} = \frac{\sigma_{xy}}{\sigma_x \sigma_y}
+\end{equation}
+Sample correlation coefficient
+\begin{equation}
+r_{XY} = \frac{s_{xy}}{s_x s_y}
+\end{equation}
+
+
+\pagebreak
+\section{Probability}
+
+\subsubsection{Conditional Probability}
+The probability of event A given event B is
+\begin{equation}
+P(A|B) = \frac{P(A\:and\:B)}{P(B)}
+\end{equation}
+
+\subsubsection{Independent Events}
+Two events A and B are said to be independent if
+\begin{equation}
+P(A|B) = P(A)
+\end{equation}
+
+\subsubsection{Complement Rule}
+The complement of event A is the event that occurs when event A does not occur.
+\begin{equation}
+P(A^c) = 1 - P(A)
+\end{equation}
+
+\subsubsection{Multiplication Rule}
+The joint probability of any two events A and B is
+\begin{equation}
+P(A\:and\:B) = P(B) \cdot P(A|B)
+\end{equation}
+\begin{equation}
+P(A\:and\:B) = P(A) \cdot P(B|A)
+\end{equation}
+The joint probability of two independent events A and B
+\begin{equation}
+P(A\:and\:B) = P(A)P(B)
+\end{equation}
+
+\subsubsection{Addition Rule}
+The probability that event A, or event B or both occur is
+\begin{equation}
+P(A\:or\:B) = P(A) + P(B) - P(A\:and\:B)
+\end{equation}
+The probability for two mutually exclusive events A and B is
+\begin{equation}
+P(A\:or\:B) = P(A) + P(B)
+\end{equation}
+The probability for two mutually exclusive events A and B is
+\begin{equation}
+P(A\:or\:B) = P(A) + P(B)
+\end{equation}
+
+\subsubsection{Law of Total Probability}
+The total probability of a the union of a series of distinct events
+\begin{equation}
+P(A) = \sum\limits_{i=1}^n(P(A \cap B_i))
+\end{equation}
+
+
+\subsubsection{Bayes' Theorem}
+Probability of an event, based on prior knowledge of conditions
+\begin{equation}
+P(A \mid B) = \frac{P(B \mid A) \cdot P(A)}{P(B)}
+\end{equation}
+Where $A$ and $B$ are events and $P(B) \neq 0$
+
+\begin{itemize}
+\item $P(A \mid B)$ is a conditional probability: the likelihood of event $A$ occurring given that $B$ is true.
+\item $P(B \mid A)$ is also a conditional probability: the likelihood of event $B$ given that $A$ is true.
+\item $P(A)$ and $P(B)$ are the probabilities of observing $A$ and $B$ independently of each other; this is known as the marginal probability.
+\end{itemize}
+
+
+\section{Probability Distributions}
+
+\subsection{Discrete Probability Distributions}
+
+\subsubsection{Requirements for a Distribution of Discrete Random Variable}
+
+Where the random variable can assume values x and P(x) is the probability
+that the random variable is equal to x.
+
+\begin{enumerate}
+\item $0 \leq P(x) \leq 1$ for all $x$
+\item $\sum\limits_{all\:x}P(x) = 1$ 
+\end{enumerate}
+
+\subsubsection{Population Mean}
+The population mean is the weighted average of all its values. The weights are the probabilities. This is also known as the expected value of $X$
+\begin{equation}
+E(X) = \mu = \sum\limits_{all\:x}xP(x)
+\end{equation}
+
+\subsubsection{Population Variance}
+The population variance is a the measure on variability on the probability weighted values.
+\begin{equation}
+V(X) = \sigma^2 = \sum\limits_{all\:x}(x-\mu)^2P(x)
+\end{equation}A shortcut calculation for the population variance is
+\begin{equation}
+V(X) = \sigma^2 = \left(\sum\limits_{all\:x}x^2P(x)\right) - \mu^2
+\end{equation}
+
+\subsubsection{Population Standard Deviation}
+The population standard deviation is still the square root of the variance.
+\begin{equation}
+\sigma = \sqrt{\sigma^2} = \sqrt{\sum\limits_{all\:x}x^2P(x) - \mu^2}
+\end{equation}
+
+\subsubsection{Laws of Expected Value and Variance}
+As you will discover, we often create new variables that are functions of other random variables. The formulas given in the next two boxes allow us to quickly determine the expected value and variance of these new variables. In the notation used here, X is the random variable and c is a constant. \\
+
+laws of expected value
+\begin{enumerate}
+\item $E(c) = c$
+\item $E(cX) = cE(X)$
+\item $E(X + c) = E(X) + c$
+\item $E(X - c) = E(X) - c$
+\end{enumerate}
+
+laws of variance
+\begin{enumerate}
+\item $V(c) = 0$
+\item $V(X + c) = V(X)$
+\item $V(cX) = c^2V(X)$
+\end{enumerate}
+
+\subsection{Bivariate Distributions}
+A bivariate distribution is a joint probability distribution of $X$ and $Y$.
+
+Its requirements are similar to the discrete distribution.
+\begin{enumerate}
+\item  $0 \leq P(x, y) \leq 1$ for all pairs of values $(x,y)$
+\item $\sum\limits_{all\:x}\sum\limits_{all\:y}P(x,y) = 1$
+\end{enumerate}
+
+\subsubsection{Independence of Random Values}
+Two discrete random variables, X and Y, are independent only if
+\begin{equation}
+p(x,y) = p_X(x) \cdot p_Y(y) 
+\end{equation}
+for all x and y
+
+This must be true for all x and y if only one pair then X and Y and not independent.
+
+\subsubsection{Expected Value }
+The expected value of a function $g(X,Y)$ is given with the following
+\begin{equation}
+E(g(X,Y))= \sum\limits_{all\:x}\sum\limits_{all\:y}(g(x,y) \cdot p(x,y))
+\end{equation}
+
+\subsubsection{Covariance}
+The covariance of two discrete variables is defined as
+\begin{equation}
+COV(X,Y) = \sigma_{xy} = \sum\limits_{all\:x}\sum\limits_{all\:y}(x-\mu_X)(y - \mu_Y)P(x,y)
+\end{equation}
+
+Alternatively the following shortcut method can be used
+\begin{equation}
+COV(X,Y) = \sigma_{xy} = \left(\sum\limits_{all\:x}\sum\limits_{all\:y}xy \cdot P(x,y)\right) - \mu_X\mu_Y
+\end{equation}
+
+\subsubsection{Coefficient of Correlation}
+The coefficient of correlation is the same as before using the covariance of two discrete variables.
+
+\begin{equation}
+\rho = \frac{\sigma_{xy}}{\sigma_x \sigma_y}
+\end{equation}
+
+\subsubsection{Laws of Expected Value}
+
+$E(X + Y) = E(X) + E(Y)$
+
+\subsubsection{Variance of the Sum of Two Variables}
+
+$V(X + Y) = V(X) + V(Y) + 2 \cdot COV(X,Y)$
+
+\subsection{Binomial Distribution}
+A binomial distribution has specific requirements
+\begin{enumerate}
+\item Consists of a fixed number of trials. Represented by $n$.
+\item Each trial has two possible outcomes. One is labelled success the other a failure.
+\item The probability of success is $p$. The probability of failure is $1-p$
+\item The trials are independent, the outcome of one trial has no affect on the outcomes of any other trial
+\end{enumerate}
+
+\subsubsection{Binomial Probability Distribution}
+The probability of $x$ successes in a binomial experiment with $n$ trials and the probability of success being $p$.
+\begin{equation}
+P(x) = \frac{n!}{x!(n - x)!}p^x(1 - p)^{n-x}
+\end{equation}
+\textit{Note $n!$ represents a factorial; that is $5! = 5 \times 4 \times 3 \times 2 \times 1$}
+
+
+\subsubsection{Binomial mean}
+
+$$ \mu = np $$
+
+\subsubsection{Binomial Variance}
+
+$$ \sigma^2 = np(1 - p) $$
+
+\subsubsection{Binomial Standard Deviation}
+
+$$ \sigma = \sqrt{np(1 - p)} $$
+
+
+\subsection{Poisson Distribution}
+A Poisson distribution has specific requirements
+\begin{enumerate}
+\item The number of successes that occur in any interval is independent of the number of successes that occur in any other interval
+\item The probability of a success in an interval is the same for all equal-size intervals
+\item The probability of a success in an interval is proportional to the size of the interval
+\item The probability of more than one success in an interval approaches 0 as the interval becomes smaller.
+\end{enumerate}
+
+\subsubsection{Poisson Probability Distribution}
+The probability that a Poisson random variable assumes a value of x in a specific interval is
+\begin{equation}
+P(x) = \frac{e^{-\mu}\mu^x}{x!} for x = 0,1,2,...
+\end{equation}
+where $\mu$ is the mean number of successes in the interval or region and $e$ is the base of the natural logarithm (approximately 2.71828). Incidently the variance of a Poisson random variable is equal to its mean; $\sigma^2 = \mu$
+
+
+\section{Continuous Probability Distributions}
+
+\subsection{Probability Density Functions}
+The following requirements apply to a probability density function $f(x)$
+\begin{enumerate}
+\item $f(x) \leq 0$ for all $x$ between $a$ and $b$
+\item The total area under the curve between $a$ and $b$ is 1.0
+\end{enumerate}
+
+\subsection{Uniform Distribution}
+A uniform probability distribution or rectangular probability distribution
+$$
+f(x) = \frac{1}{b - a}\:where\:a \leq x \leq b
+$$
+
+\subsubsection{Probability of an interval}
+To calculate the probability of any interval, find the area under the curve.
+$$
+P(x_1 < X < x_2) =  Base \times Height = (x_2 - x_1) \times \frac{1}{b - a}
+$$
+
+\subsection{Normal Distribution}
+A normal distribution is a symmetric curve around its mean, with a random variable between $-\infty$ and $+\infty$
+
+\subsubsection{Normal Density Function}
+The probability density function of a normal random variable is
+\begin{equation}
+\mbox{\Large\( 
+f(x) = \frac{1}{\sigma\sqrt{2\pi}}e^{-\frac{1}{2}(\frac{x-\mu}{\sigma})^2}
+\)}
+\end{equation}
+$e$ is the base of the natural logarithm and is a mathematical constant.
+$$e \approx 2.71828...$$
+
+\subsubsection{Standardise random variable}
+Calculate the standardised normal form of a random variable for use with lookup tables.
+$$
+Z = \frac{X - \mu}{\sigma}
+$$
+
+\subsection{Exponential Distribution}
+
+\subsection{Other Continuous Distributions}
+
+\section{Sampling Distributions}
+
+\subsubsection{Mean of the sample mean}
+
+$$
+\mu_{\bar{x}}=\mu
+$$
+
+\subsubsection{Variance of the sample mean}
+
+$$
+\sigma^2_{\bar{x}} = \frac{\sigma^2}{n}
+$$
+
+\subsubsection{Standard Error}
+
+$$
+\sigma_{\bar{x}} = \frac{\sigma}{n} \sqrt{\frac{N - n}{N - 1}}
+$$
+
+$ \sqrt{\frac{N - n}{N - 1}} $ is called the finite population correction factor, it tends towards 1 as a population size is large relative to the sample size and can be ommitted.
+
+
+
+
+\section{Hypothesis Testing}
+
+\subsubsection{Hypothesis}
+$H_0$ is the null hypothesis, usually corresponds to a population parameter. This is assumed to be true until rejected through testing.
+
+i.e. $H_0 : \mu = 150$
+\\
+\\
+The alternative hypothesis $H_1$ represents a claim about hte population you are trying to prove. Generally involves a $\leq$, $\geq$, $\neq$ sign
+
+i.e. $H_1 : \mu \leq 150$
+
+\subsubsection{Test Statistic}
+Obtain a sample and calculate a test statistic
+
+\subsubsection{Decision Rule}
+
+\subsubsection{Conclusion}
+
+\subsubsection{Hypothesis test for $\mu$ when $\sigma^2$ is known}
+
+$$
+Z = \frac{\bar{X} - \mu_0}{\frac{\sigma}{\sqrt{n}}}
+$$
+
+Decision rule
+
+$Z > z_{\frac{\alpha}{2}}$ or $Z < -z_{\frac{\alpha}{2}}$ $(H_1 : \mu \neq \mu_0)$
+\\
+
+$Z < -z_{\alpha}$ $(H_1 : \mu < \mu_0)$
+\\
+
+$Z > z_{\alpha}$ $(H_1 : \mu > \mu_0)$
+
+
+
+\subsubsection{Two-tailed Test}
+In a two-tailed test, we care about both extreme tails of the distribution. Usually consists of a $\neq$ sign. We reject $H_0$ if test statistic is either too small or too large.
+e.g. $ H_1 : \mu \neq 150$
+
+\subsubsection{Hypothesis test for $\mu$ when $\sigma^2$ is unknown}
+The $t$-distribution uses the sample standard deviation instead of the populations.
+$$
+T = \frac{\bar{X} - \mu_0}{\frac{s}{\sqrt{n}}}
+$$
+
+
+\section{Comparing two populations}
+
+\subsection{Population variances are known}
+
+\subsubsection{Mean}
+$$
+E(\bar{X}_1 - \bar{X}_2) = \mu_1 - \mu_2
+$$
+
+\subsubsection{Variance}
+$$
+V(\bar{X}_1 - \bar{X}_2) = \frac{\sigma^2_1}{n_1} + \frac{\sigma^2_2}{n_2}
+$$
+
+\subsubsection{Standardised $Z$-statistic}
+$$
+Z = \frac{(\bar{X}_1 - \bar{X}_2) - (\mu_1 - \mu_2)}{\sqrt{\frac{\sigma^2_1}{n_1}+\frac{\sigma^2_2}{n_2}}}
+$$
+\\
+
+\pagebreak
+
+\section{ANOVA}
+
+\subsubsection{Sum of Squares for Treatment}
+The variation between the sample means is measured by the sum of squares for treatment.
+$$
+SST = \sum_{j=1}^k n_j(\bar{Y}_j - \bar{Y})^2
+$$
+
+
+\subsubsection{Sum of Squares for Error}
+This measures the variation within the treatments.
+$$
+SSE = \sum_{j=1}^k \sum_{i=1}^{n_j} (Y_{ij} - \bar{Y}_j)^2
+$$
+
+Where $Y_{ij}$ is teh $i$th observation in the $j$th sample.
+
+\subsubsection{Total Sum of Squares}
+The $SS(Total)$ measures the total amount of variation that exists in the data.
+$$
+SS(Total) = \sum_{j=1}^k \sum_{i=1}^{n_j} (Y_{ij} - \bar{Y})^2
+$$
+
+
+\subsubsection{Relation of $SST$, $SSE$ and $SS(Total)$}
+
+$$
+SS(Total) = SST + SSE
+$$
+
+\subsubsection{Mean Squares for Test Statistic}
+Converstion sof sum of squares to mean squres, by scaling them by their appropriate degrees of freedom.
+$$
+MST = \frac{SST}{k -1}
+$$
+
+$$
+MSE = \frac{SSE}{n - k}
+$$
+
+Finally the F-statistic or alternatively the F-ratio can be calculated.
+$$
+F = \frac{MST}{MSE}
+$$
+
+\subsubsection{ANOVA Table}
+
+\begin{center}
+\begin{tabular}{ c c c c c }
+ \hline
+ Source & Sum of Squares & Deg. of Freedom & Mean Squares & F-statistic\\ 
+ \hline
+ Factor (Treatments) & $SST$ & $k - 1$ & $MST = \frac{SST}{k-1}$ & $F = \frac{MST}{MSE}$\\  
+ Error & $SSE$ & $n - k$ & $MSE = \frac{SSE}{n - k}$    \\
+  \hline
+ Total & $SS(Total)$ & $n -1$
+\end{tabular}
+\end{center}
+
+\subsection{Two-way ANOVA}
+
+
+
+\end{document}
