@@ -400,16 +400,16 @@ $$
 \sigma_{\bar{x}} = \frac{\sigma}{n} \sqrt{\frac{N - n}{N - 1}}
 $$
 
-$ \sqrt{\frac{N - n}{N - 1}} $ is called the finite population correction factor, it tends towards 1 as a population size is large relative to the sample size and can be ommitted.
+$ \sqrt{\frac{N - n}{N - 1}} $ is called the finite population correction factor, it tends towards 1 as a population size is large relative to the sample size and can be omitted.
 
 
 
 
 \section{Estimation}
 
-\subsubsection{Confidence Interval Estimator of $\mu$}
+\subsubsection{Estimating $\mu$ given $\sigma$}
 
-The probabilty $1 - \alpha$  is called the confidence level.
+The  $1 - \alpha$  is called the confidence level.
 \\
 
 The min and max of an interval can be calculated using the confidence interval estimator.
@@ -419,12 +419,17 @@ $$
 The first part of the estimator is the lower confidence limit (LCL). The second part is the upper confidence limit (UCL)
 \\
 
-Alternativly the confidence interval estimator can be represented as:
+Alternatively the confidence interval estimator can be represented as:
 $$
 \bar{x} \pm z_{\alpha / 2}\frac{\sigma}{\sqrt{n}}
 $$
 
 
+\subsubsection{Sample Size to Estimate $\mu$}
+
+$$
+n = (\frac{z_{\alpha / 2} \sigma}{B})^2
+$$
 
 \section{Hypothesis Testing}
 
@@ -434,9 +439,29 @@ $H_0$ is the null hypothesis, usually corresponds to a population parameter. Thi
 i.e. $H_0 : \mu = 150$
 \\
 \\
-The alternative hypothesis $H_1$ represents a claim about hte population you are trying to prove. Generally involves a $\leq$, $\geq$, $\neq$ sign
+The alternative hypothesis $H_1$ represents a claim about the population you are trying to prove. Generally involves a $\leq$, $\geq$, $\neq$ sign
 
 i.e. $H_1 : \mu \leq 150$
+
+\begin{enumerate}
+\item There are two hypothesis. One is called the \textit{null} hypothesis, and the other is the \textit{alternative} or \textit{research} hypothesis.
+\item The testing procedure begins with the assumption that the null hypothesis is true.
+\item The goal of the process is to determine whether there is enough evidence to infer that the alternative hypothesis is true.
+\item There are two possible decisions:\\
+	Conclude that there is enough evidence to support the alternative hypothesis\\
+	Conclude that there is not enough evidence to support the alternative hypothesis.
+\item Two possible errors can be made on any test.
+\end{enumerate}
+
+\subsubsection{Testing Errors}
+There are two possible errors that can be made in any test. A Type I error occurs when a true null hypothesis is rejected.
+A Type II error occurs when a false null hypothesis is not rejected.\\
+
+The probabilities of Type I and Type II errors are:\\
+
+$P(Type\:I\:error) = \alpha$\\
+
+$P(Type\:II\:error) = \beta$
 
 \subsubsection{Test Statistic}
 Obtain a sample and calculate a test statistic
