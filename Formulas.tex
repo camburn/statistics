@@ -466,9 +466,28 @@ $P(Type\:II\:error) = \beta$
 \subsubsection{Test Statistic}
 Obtain a sample and calculate a test statistic
 
+$$
+Z = \frac{\bar{x} - \mu}{\sigma / \sqrt{n}}
+$$
+
+\subsubsection{P Value}
+The $p$-value of a test is hte probabilty of observing a test statistic at least as extreme as the one computeted given that the null hypothesis is true.
+
+$$
+p-value = 1 - Z
+$$
+
+
 \subsubsection{Decision Rule}
 
+Rejection region
+
+p-value comparison to $\alpha$
+
 \subsubsection{Conclusion}
+If the null hypothesis is rejected, it is concluded that there is enough statisitical evidence to infer that the alternative hypothesis is true.\\
+
+If we do not reject the null hypothesis, we conclude that there is not enough statistical evidcen to infer that the alternative hypothesis is true.
 
 \subsubsection{Hypothesis test for $\mu$ when $\sigma^2$ is known}
 
@@ -616,6 +635,7 @@ $$
 
 
 
+
 \section{Simple Linear Regression}
 Can determine if there is a linear relationship between $X$ and $Y$. Can also determine the nature of the linear relationship between $X$ and $Y$. Finally it can also be used to predict $Y$ given a value of $X$.
 
@@ -644,6 +664,85 @@ N is normal distribution
 0 is the expected mean
 
 $\sigma$ is the indication of the contstant variance
+
+
+\subsubsection{The Error variable $\epsilon$}
+This represents the inherent variability that exists within the population.
+
+\subsubsection{Mean and Variance of the distribution of Y given X}
+Based on the model assumptions, The distribution of the Y values given $X = x^*$
+
+Mean
+$$
+E(Y) = \beta_0 + \beta_1 x^*
+$$
+
+Variance
+$$
+V(Y) = \sigma^2_\epsilon
+$$
+
+\subsubsection{Fitted regression line}
+Representation using sampled data.
+$$
+Y_i = \hat{\beta_0} + \hat{\beta_1} X_i + e_i
+$$
+The term $e_i$ is called the \textbf{residual} of the $i$th observataions and is just equal to:
+$$
+e_i = Y_i - \hat{Y_i}
+$$
+
+\subsection{Parameter Estimation}
+
+\subsubsection{Estimation of $\hat{\beta_0}$ and $\hat{\beta_1}$}
+
+$\hat{\beta_1}$ is the slope\\
+$\hat{\beta_0}$ is the intercept 
+
+$$
+\hat{\beta_1} = \frac{s_{XY}}{s^2_X}
+$$
+Where $s^2_X$ is the sample variance of X and $s_{XY}$ is the sample covariance between X and Y.
+
+$$
+\hat{\beta_0} = \bar{Y} - \hat{\beta_1} \bar{X}
+$$
+
+\subsection{Hypothesis for SLR}
+
+$H_0 : \beta_1 = 0$
+\\
+
+$H_1 : \beta_1 \neq 0$
+
+\subsubsection{Test Statistic}
+The test statistic is calculated as:
+
+$$
+T = \frac{\hat{\beta_1}}{s_{\hat{\beta_1}}} = \frac{r \cdot \sqrt{n-2}}{\sqrt{1 - r^2}}
+$$
+
+\subsubsection{Decision Rule}
+
+For our decision rule, we need to compare this $T$-statistic to a $t$-distribution with $n - 2$ degrees of freedom.
+
+\subsubsection{Confidence Intervals}
+Confidence interval for a particular value of Y (also called the predicition interval) is given by:
+$$
+\hat{y_g} \pm t_{\frac{\alpha}{2}, n-2} \times s_\epsilon 
+\sqrt{1 + \frac{1}{n} + \frac{(x_g - \bar{X})^2}{(n - 1)s^2_X}}
+$$
+The confidence interval for the expected value of Y is given by:
+$$
+\hat{y_g} \pm t_{\frac{\alpha}{2}, n-2} \times s_\epsilon 
+\sqrt{\frac{1}{n} + \frac{(x_g - \bar{X})^2}{(n - 1)s^2_X}}
+$$
+
+
+\section{Multiple Linear Regression}
+
+
+
 
 
 \end{document}
