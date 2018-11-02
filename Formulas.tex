@@ -1,5 +1,7 @@
 \documentclass{article}
 \usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amssymb}
 
 \title{STAT7055 Formulas}
 \author{Campbell}
@@ -471,7 +473,7 @@ Z = \frac{\bar{x} - \mu}{\sigma / \sqrt{n}}
 $$
 
 \subsubsection{P Value}
-The $p$-value of a test is hte probabilty of observing a test statistic at least as extreme as the one computeted given that the null hypothesis is true.
+The $p$-value of a test is the probabilty of observing a test statistic at least as extreme as the one computeted given that the null hypothesis is true.
 
 $$
 p-value = 1 - Z
@@ -479,15 +481,49 @@ $$
 
 
 \subsubsection{Decision Rule}
+There are three ways a decision can be made on the initial hypothesis:\\
 
-Rejection region
+\begin{itemize}
+\item Rejection region compared to test statistic
+\item $p$-value comparison to $\alpha$
+\item $\mu$ tested against confidence interval estimators 
+\end{itemize}
 
-p-value comparison to $\alpha$
+Consider the following hypothesis, we can use all the above methods to make a decision:
+
+$H_0 : \mu = 17.09$
+
+$H_1 : \mu \neq 17.09$\\
+
+\textbf{Rejection Region}
+
+$ z = 1.19 $
+
+$ z < -1.96$ or $z > 1.96$\\
+
+Because $z$ is neither greater than 1.96 or less than -1.96 we cannot reject the null hypothesis.\\
+
+\textbf{$p$-value}
+
+$ p-value = 0.2340 $
+
+$\alpha = 0.05$
+
+$\therefore$ since $p$-value is greater than the $\alpha$ value we cannot reject the null hypothesis.\\
+
+
+\textbf{Confidence Interval Estimator}
+
+$ LCL = 16.79$ and $UCL = 18.31$
+
+$\therefore$ since $H_0$ lies within the confidence interval estimations we cannot conclude there is sufficient evidence to support $H_1$.\\
+
 
 \subsubsection{Conclusion}
 If the null hypothesis is rejected, it is concluded that there is enough statisitical evidence to infer that the alternative hypothesis is true.\\
 
 If we do not reject the null hypothesis, we conclude that there is not enough statistical evidcen to infer that the alternative hypothesis is true.
+
 
 \subsubsection{Hypothesis test for $\mu$ when $\sigma^2$ is known}
 
@@ -506,6 +542,9 @@ $Z < -z_{\alpha}$ $(H_1 : \mu < \mu_0)$
 $Z > z_{\alpha}$ $(H_1 : \mu > \mu_0)$
 
 
+\subsubsection{One-tailed Test}
+e.g. $ H_1 : \mu > 150$ or $ H_1 : \mu < 150$
+
 
 \subsubsection{Two-tailed Test}
 In a two-tailed test, we care about both extreme tails of the distribution. Usually consists of a $\neq$ sign. We reject $H_0$ if test statistic is either too small or too large.
@@ -515,6 +554,12 @@ e.g. $ H_1 : \mu \neq 150$
 The $t$-distribution uses the sample standard deviation instead of the populations.
 $$
 T = \frac{\bar{X} - \mu_0}{\frac{s}{\sqrt{n}}}
+$$
+
+\subsubsection{Calculating the Type II Error}
+
+$$
+P(Type\:II\:Error) = P\left(\frac{\bar{X} - \mu}{\sigma/\sqrt{n}} \right)
 $$
 
 
